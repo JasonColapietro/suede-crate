@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Build a listening crate from the artists you love. Discover music, films and books through Qloo’s cultural taste graph.">
+  <meta name="theme-color" content="#234c66">
+  <title>Suede Crate — follow your music taste</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#artist-query">Skip to artist search</a>
+  <header class="masthead shell">
+    <a class="wordmark" href="/" aria-label="Suede Crate home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="currentColor"/><circle cx="16" cy="16" r="7" fill="none" stroke="white"/><circle cx="16" cy="16" r="2" fill="white"/></svg><span>Suede <strong>Crate</strong></span></a>
+    <nav aria-label="Main"><a href="#how-it-works">How it works</a><a href="https://suedeai.ai/" target="_blank" rel="noopener noreferrer">By Suede AI</a></nav>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="headline">
+      <div class="intro-copy">
+        <p class="opening">For people who still read the liner notes.</p>
+        <h1 id="headline">Your next favorite<br>starts with a familiar one.</h1>
+        <p class="standfirst">Bring a few artists you love. Leave with new music to explore, a film for later, and a book you might never have found.</p>
+        <a class="text-link" href="#artist-query">Start digging <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="record-scene" aria-hidden="true">
+        <div class="record"><span class="record-center">Suede<br>Crate<span class="spindle"></span></span></div>
+        <div class="sleeve"><span class="sleeve-title">Good taste<br>travels.</span><div class="sleeve-lines"></div><span class="sleeve-note">Music. Film. Books.<br>Connected by what you love.</span></div>
+      </div>
+    </section>
+
+    <section id="workbench" class="workbench" aria-labelledby="start-title">
+      <div class="bench-heading"><div><h2 id="start-title">What’s on your turntable?</h2><p>Choose up to five artists. We’ll find the connections.</p></div><span class="connection" id="connection" role="status">Checking connection…</span></div>
+      <div id="connection-note" class="notice" hidden></div>
+      <div class="bench-grid">
+        <div class="search-area">
+          <form id="search-form" role="search">
+            <label for="artist-query">Artist or band</label>
+            <div class="search-row"><input id="artist-query" name="artist" type="search" autocomplete="off" minlength="2" maxlength="100" placeholder="Try an artist you keep coming back to" required aria-describedby="search-help"><button id="search-button" type="submit">Find artist</button></div>
+            <p id="search-help" class="small">Pick the exact match from Qloo’s catalog.</p>
+          </form>
+          <div class="suggestions"><span>Somewhere to start:</span><button type="button" data-query="Radiohead">Radiohead</button><button type="button" data-query="Erykah Badu">Erykah Badu</button><button type="button" data-query="Nirvana">Nirvana</button></div>
+          <p id="search-status" class="small live-message" role="status" aria-live="polite"></p>
+          <ul id="search-results" class="search-results" aria-label="Artist matches"></ul>
+        </div>
+        <div class="chosen-area">
+          <div class="chosen-heading"><h3>Your starting point</h3><span id="seed-count">0 / 5</span></div>
+          <ul id="seeds" class="seeds" aria-label="Selected artists"></ul>
+          <p id="seed-empty" class="empty-seeds">The records you always come back to.<br>Add an artist from search to begin.</p>
+          <fieldset id="discovery-settings"><legend>How far should we wander?</legend><label class="radio-option"><input type="radio" name="discovery" value="familiar" checked><span>Close connections<small>Start near what you know</small></span></label><label class="radio-option"><input type="radio" name="discovery" value="deep"><span>Deeper cuts<small>Ask Qloo for less popular artists</small></span></label></fieldset>
+          <button class="primary" id="build-crate" type="button" disabled>Build my crate <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+      <p id="build-status" class="build-status" role="status" aria-live="polite"></p>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="crate" class="crate" aria-labelledby="crate-title" hidden>
+      <div class="crate-heading"><div><p id="crate-context" class="small"></p><h2 id="crate-title" tabindex="-1">A little outside your usual rotation.</h2></div><div class="crate-actions"><button id="export" class="secondary" type="button">Save listening notes</button><button id="reset" class="quiet" type="button">Start over</button></div></div>
+      <div id="stale-note" class="notice" hidden>Your starting artists or discovery setting changed. Build your crate again to use them.</div>
+      <p id="result-note" class="result-note">Listen first. Keep what clicks. Add a discovery to your starting artists, then build again to follow that thread.</p>
+      <div id="warnings" class="notice" hidden></div>
+      <div id="artists" class="artist-grid"></div>
+      <p id="artist-empty" class="notice" hidden>No new artists matched this combination. Try close connections, remove an exclusion, or choose different starting artists.</p>
+      <div class="cross-domain"><div class="cross-intro"><h3>Taste doesn’t stop at music.</h3><p>Qloo connects your artists to films and books through cultural taste. These are associations to explore, not an artist’s personal recommendations.</p></div><div><h4>For your watchlist</h4><div id="films" class="culture-list"></div></div><div><h4>For your bookshelf</h4><div id="books" class="culture-list"></div></div></div>
+      <details class="evidence"><summary>See how this crate was built</summary><div id="evidence"></div></details>
+      <div class="dismissed"><span id="dismissed-count"></span><button id="clear-dismissed" class="quiet" type="button" hidden>Clear exclusions</button></div>
+    </section>
+
+    <section id="how-it-works" class="how" aria-labelledby="how-title"><h2 id="how-title">Follow a thread, not a prompt.</h2><div class="how-grid"><div><h3>You choose the artists.</h3><p>Search Qloo’s catalog and pick the exact matches. Your taste starts with you, without a streaming login or listening-history upload.</p></div><div><h3>Qloo finds the connections.</h3><p>The same artist signals guide music, film, and book discovery. Every result comes from Qloo’s API. We don’t invent songs, influences, or match scores.</p></div><div><h3>You decide where it goes.</h3><p>Keep a discovery as a new starting point or pass on one. Rebuild your crate to explore the next set of connections.</p></div></div></section>
+  </main>
+  <footer class="shell"><p>Suede Crate <span>by <a href="https://suedeai.ai/">Suede AI</a></span></p><div><a href="#privacy" id="privacy-link">Privacy</a><a href="/api/mcp" id="mcp-link">Use with an assistant</a></div><details id="privacy"><summary>Your data</summary><p>Artist searches, selected Qloo IDs, and exclusions are sent through our server to Qloo. No account or listening history is needed. Your selections stay in this tab. Server responses may be privately cached for five minutes. Hosting and Qloo may retain operational logs under their policies. No analytics or advertising scripts are included.</p></details><details id="assistant"><summary>Connect an assistant</summary><p>Add this site’s <code id="mcp-url">/api/mcp</code> URL to an MCP client that supports Streamable HTTP. It provides <code>search_artists</code> and <code>build_music_crate</code>. Requests use the same real Qloo data as this page. No client-side API key is needed.</p></details></footer>
+</body>
+</html>
