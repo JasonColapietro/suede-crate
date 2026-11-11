@@ -1,3 +1,4 @@
+import { verifyInlineCode } from '../lib/html-policy.mjs';
 import { readdir, readFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
@@ -15,7 +16,7 @@ for (const file of await walk('.')) {
   if (/\.(mjs|js)$/.test(file)) { const result = spawnSync(process.execPath, ['--check', file], { stdio: 'inherit' }); if (result.status !== 0) process.exit(1); count++; }
 }
 const html = await readFile('public/index.html', 'utf8');
-if (/<script\b[^>]*>\s*[^<\s]/i.test(html) || /\son\w+\s*=/i.test(html)) throw new Error('Inline scripts violate the content security policy.');
+verifyInlineCode(html);
 const css = await readFile('public/style.css', 'utf8');
 if (!css.includes('prefers-reduced-motion') || !css.includes(':focus-visible')) throw new Error('Motion and keyboard styles must be present.');
 console.log(`Checked ${count} JavaScript modules and static security/accessibility contracts.`);
