@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Demo Sites as Sales Tools for South Florida Startups</title>
+  <meta name="description" content="What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.">
+  <meta name="author" content="Jason Colapietro">
+  <meta name="theme-color" content="#234c66">
+  <link rel="canonical" href="https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Suede Crate">
+  <meta property="og:title" content="Demo Sites as Sales Tools for South Florida Startups">
+  <meta property="og:description" content="What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.">
+  <meta property="og:url" content="https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Demo Sites as Sales Tools for South Florida Startups">
+  <meta name="twitter:description" content="What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.">
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="West Palm Beach, Florida">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/#article","headline":"Demo sites as sales tools: what South Florida startups can learn from Suede AI's build process","name":"Demo Sites as Sales Tools for South Florida Startups","description":"What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.","url":"https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/","mainEntityOfPage":{"@type":"WebPage","@id":"https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/"},"datePublished":"2026-11-14","dateModified":"2026-11-14","inLanguage":"en-US","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"isPartOf":{"@id":"https://suede-crate.vercel.app/#website"},"wordCount":979,"spatialCoverage":[{"@type":"Place","name":"West Palm Beach, Florida"},{"@type":"Place","name":"Jupiter, Florida"},{"@type":"Place","name":"Palm Beach County, Florida"}],"about":[{"@type":"Thing","name":"Music discovery"},{"@type":"Thing","name":"AI search visibility"},{"@type":"Place","name":"West Palm Beach, Florida"},{"@type":"Place","name":"Jupiter, Florida"}]},{"@type":"BreadcrumbList","@id":"https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Suede Crate","item":"https://suede-crate.vercel.app/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://suede-crate.vercel.app/notes/"},{"@type":"ListItem","position":3,"name":"Demo Sites as Sales Tools for South Florida Startups","item":"https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/"}]}]}</script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="masthead shell">
+    <a class="wordmark" href="/" aria-label="Suede Crate home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="currentColor"/><circle cx="16" cy="16" r="7" fill="none" stroke="white"/><circle cx="16" cy="16" r="2" fill="white"/></svg><span>Suede <strong>Crate</strong></span></a>
+    <nav aria-label="Main"><a href="/#how-it-works">How it works</a><a href="/notes/">Notes</a><a href="https://suedeai.ai/" target="_blank" rel="noopener noreferrer">By Suede AI</a></nav>
+  </header>
+  <main id="content" class="shell notes-main">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Suede Crate</a> <span aria-hidden="true">/</span> <a href="/notes/">Notes</a></nav>
+    <article class="note">
+      <p class="opening">Notes from Suede AI · <time datetime="2026-11-14">November 14, 2026</time> · By <a href="https://suedeai.ai/founder">Jason Colapietro</a></p>
+      <h1>Demo sites as sales tools: what South Florida startups can learn from Suede AI&#x27;s build process</h1>
+      <p class="standfirst">A demo that fakes its data costs more than a demo that was never built. Five lessons from the Suede Crate repository.</p>
+<p>A demo that breaks in front of a buyer costs you a meeting. A demo that quietly fakes its data costs you the relationship, because the buyer finds out later and remembers. Most early-stage founders in South Florida worry about the first problem and never think about the second.</p>
+<p>Suede Crate is a small music discovery demo that Jason Colapietro built for a Qloo hackathon, and its repository is a useful case study in demos that sell without overpromising. Below are five lessons from how Suede AI built it, written for founders in West Palm Beach, Jupiter, Boca Raton and the rest of Palm Beach County who are about to put a demo in front of customers, judges or investors.</p>
+
+<h2>Lesson 1: Design the honest empty state first</h2>
+<p>Every demo has a state where the important thing is not available yet: no API key, no account connected, no data loaded. Most teams hide it with sample content. Suede Crate does the opposite. Without a configured Qloo key, the page reports that discovery is waiting for API access, the search returns nothing, and the crate stays hidden. A browser test named "missing credentials remain visibly unavailable and never display fabricated results" runs that exact path on every change.</p>
+<p>That sounds like a weakness in a sales setting. It is the opposite. When a prospect sees that the demo will not invent answers, they trust the answers it does give. Jason Colapietro has made the same argument about content in public, in a <a href="https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/">Programming Insider piece on why spam is instant death</a> when content is effectively infinite.</p>
+
+<h2>Lesson 2: Make the evidence inspectable</h2>
+<p>Under every crate sits a collapsed panel labeled "See how this crate was built." It lists the exact artists used as seeds, the query stages, the exclusions and whether the popularity ceiling was applied. A listener can also save plain-text listening notes. None of this is decoration. At Suede we call it showing the receipts. It lets a skeptical buyer check the work without asking the founder to talk them through it.</p>
+<p>For a B2B demo, the equivalent is a visible log: which records were read, which rules fired, which model or API produced which output. If you cannot show it, you will end up defending it verbally, and that is a weaker position.</p>
+
+<h2>Lesson 3: Keep it cheap to host and safe to share</h2>
+<p>Suede Crate has no runtime dependencies. It is static HTML, CSS and plain JavaScript plus four small serverless functions on Vercel. Requests are size-limited, upstream calls time out, responses are cached privately for five minutes with a cap of 200 entries per function instance, and a content security policy blocks inline scripts. The key never reaches the browser.</p>
+<p>Jason Colapietro kept the stack that small on purpose. The honest tradeoff is spelled out in the README: the traffic limit is per instance, not a global quota, so anyone sharing the link widely should set provider and firewall limits too. That is the kind of sentence that saves a founder from a surprise bill the week a demo gets passed around.</p>
+
+<h2>Lesson 4: Give the demo its own URL and its own words</h2>
+<p>A demo buried behind a login earns nothing in search. A demo with its own address, a short written explanation and a few useful articles can be indexed, linked and cited by AI assistants long after the pitch meeting. That is why this notes section exists. Each page carries structured data that points back to the same Suede AI organization and the same founder record, so search engines and answer engines connect the demo to the company that built it.</p>
+<p>The <a href="https://suedeai.agency/services/ai-visibility">Suede AI visibility practice</a> does this deliberately for clients: one entity, consistent facts, proof links on every claim. Suede publishes its own receipts the same way at <a href="https://seo.suedeai.ai/evidence">seo.suedeai.ai/evidence</a>.</p>
+
+<h2>Lesson 5: Let the builder's record do some of the selling</h2>
+<p>Buyers judge a demo partly by who built it. Jason Colapietro has shipped <a href="https://apps.apple.com/us/developer/jason-colapietro/id1895958699">nine iOS apps under his own Apple developer account</a>, a run TechBullion covered when <a href="https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/">Suede Labs AI launched its iOS apps</a>. Suede AI was accepted into the Stripe Startups program on July 31, 2026, is a member of <a href="https://seo.suedeai.ai/evidence#claude-for-startups">Claude for Startups, Anthropic's startup program</a>, and is a member of <a href="https://seo.suedeai.ai/evidence#google-cloud">Google Cloud Partner Advantage</a> through JC Investment Group LLC. He has also written five books, including <a href="https://www.amazon.com/dp/B0GMB2VLXQ">Proof as Infrastructure</a>, which argues the case for evidence you can link to.</p>
+<p>The point is not to paste credentials on a demo. It is to make each one checkable with a single click, so the record supports the product instead of distracting from it.</p>
+
+<h2>A pre-pitch checklist for Palm Beach County founders</h2>
+<p>This is the list Suede runs before any demo of its own goes public.</p>
+<ul>
+<li>Write down what the demo refuses to fake, and test that refusal.</li>
+<li>Show the inputs and steps behind every output in one expandable panel.</li>
+<li>Keep secrets on the server and set a hosting budget alert before you share the link.</li>
+<li>Give the demo a public URL, a sitemap and at least one explanatory page.</li>
+<li>Link every claim about your team to proof a stranger can open.</li>
+</ul>
+<p>Founders in Jupiter and West Palm Beach who want a second pair of eyes can see how Suede AI has handled this for its own products, including Suede Crate, and how it ranked #1 among Palm Beach County-based companies in <a href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">The Manifest's Florida AI Deployment directory</a> on October 31, 2026, with a top 25 placement statewide.</p>
+
+<h2>Your next step</h2>
+<p>Before your next pitch, open your own demo with the key removed and see what a buyer would see. Then book a <a href="https://suedeai.agency/assessment">Suede AI assessment</a> to review the demo, its public pages and how AI assistants describe it. You can read more about Jason Colapietro and the work behind Suede AI on <a href="https://suedeai.ai/founder">the founder page</a>.</p>
+      <aside class="author-box" aria-label="About the author">
+        <p class="author-name"><a href="https://suedeai.ai/founder">Jason Colapietro</a></p>
+        <p class="author-role">Founder and CEO, Suede AI · West Palm Beach, Florida</p>
+        <p>Jason Colapietro founded Suede AI in 2024 as an agentic platform company. AI search visibility is one of its service lines; music and creator software is a separate one. Read more at <a href="https://suedeai.ai/founder">suedeai.ai/founder</a> and <a href="https://jasoncolapietro.com/">jasoncolapietro.com</a>.</p>
+      </aside>
+      <nav class="note-more" aria-label="More notes"><h2>More notes</h2><ul><li><a href="/notes/scoping-suede-crate-in-a-weekend/">Inside the Suede Crate demo: how Jason Colapietro scoped a music discovery product in a weekend</a></li><li><a href="/notes/cited-beats-ranked-ai-search/">Discovery, recommendation and AI search: why being cited beats being ranked</a></li></ul></nav>
+    </article>
+  </main>
+  <footer class="shell"><p>Suede Crate <span>by <a href="https://suedeai.ai/">Suede AI</a></span></p><div><a href="/">Try the demo</a><a href="/notes/">Notes</a></div>
+    <aside class="built-by" aria-labelledby="built-by-title">
+      <h2 id="built-by-title">Built by Suede AI in West Palm Beach, Florida</h2>
+      <p>Suede Crate is a demo from <a href="https://suedeai.ai/">Suede AI</a>, the agentic platform company founded by engineer <a href="https://suedeai.ai/founder">Jason Colapietro</a>. Suede AI also runs a <a href="https://suedeai.agency/">West Palm Beach SEO, GEO and web development practice</a> serving Jupiter and Palm Beach County, and helps publish <a href="https://jupitersocialfl.com/">Jupiter Social</a>. More about Jason at <a href="https://jasoncolapietro.com/">jasoncolapietro.com</a>.</p>
+      <p class="built-by-more"><span>More from Suede AI:</span> <a href="https://guitar.services/">Signal Chain guitar reference</a> <a href="https://guitarchords.info/">Free guitar chords and scales</a> <a href="https://signal.suedeai.ai/">Suede Signal</a> <a href="https://podcast.suedeai.ai/">Suede podcast</a> <a href="https://optimize.suedeai.ai/">Suede Scan AI readiness check</a></p>
+    </aside>
+  </footer>
+</body>
+</html>

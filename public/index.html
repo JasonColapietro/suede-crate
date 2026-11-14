@@ -6,6 +6,7 @@
   <meta name="description" content="Build a listening crate from the artists you love. Discover music, films and books through Qloo’s cultural taste graph.">
   <meta name="theme-color" content="#234c66">
   <title>Suede Crate — follow your music taste</title>
+  <link rel="canonical" href="https://suede-crate.vercel.app/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
   <script src="/app.js" type="module"></script>
@@ -15,7 +16,7 @@
   <a class="skip" href="#artist-query">Skip to artist search</a>
   <header class="masthead shell">
     <a class="wordmark" href="/" aria-label="Suede Crate home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="currentColor"/><circle cx="16" cy="16" r="7" fill="none" stroke="white"/><circle cx="16" cy="16" r="2" fill="white"/></svg><span>Suede <strong>Crate</strong></span></a>
-    <nav aria-label="Main"><a href="#how-it-works">How it works</a><a href="https://suedeai.ai/" target="_blank" rel="noopener noreferrer">By Suede AI</a></nav>
+    <nav aria-label="Main"><a href="#how-it-works">How it works</a><a href="/notes/">Notes</a><a href="https://suedeai.ai/" target="_blank" rel="noopener noreferrer">By Suede AI</a></nav>
   </header>
   <main class="shell">
     <section class="intro" aria-labelledby="headline">
@@ -71,6 +72,12 @@
 
     <section id="how-it-works" class="how" aria-labelledby="how-title"><h2 id="how-title">Follow a thread, not a prompt.</h2><div class="how-grid"><div><h3>You choose the artists.</h3><p>Search Qloo’s catalog and pick the exact matches. Your taste starts with you, without a streaming login or listening-history upload.</p></div><div><h3>Qloo finds the connections.</h3><p>The same artist signals guide music, film, and book discovery. Every result comes from Qloo’s API. We don’t invent songs, influences, or match scores.</p></div><div><h3>You decide where it goes.</h3><p>Keep a discovery as a new starting point or pass on one. Rebuild your crate to explore the next set of connections.</p></div></div></section>
   </main>
-  <footer class="shell"><p>Suede Crate <span>by <a href="https://suedeai.ai/">Suede AI</a></span></p><div><a href="#privacy" id="privacy-link">Privacy</a><a href="/api/mcp" id="mcp-link">Use with an assistant</a></div><details id="privacy"><summary>Your data</summary><p>Artist searches, selected Qloo IDs, and exclusions are sent through our server to Qloo. No account or listening history is needed. Your selections stay in this tab. Server responses may be privately cached for five minutes. Hosting and Qloo may retain operational logs under their policies. No analytics or advertising scripts are included.</p></details><details id="assistant"><summary>Connect an assistant</summary><p>Add this site’s <code id="mcp-url">/api/mcp</code> URL to an MCP client that supports Streamable HTTP. It provides <code>search_artists</code> and <code>build_music_crate</code>. Requests use the same real Qloo data as this page. No client-side API key is needed.</p></details></footer>
+  <footer class="shell"><p>Suede Crate <span>by <a href="https://suedeai.ai/">Suede AI</a></span></p><div><a href="#privacy" id="privacy-link">Privacy</a><a href="/api/mcp" id="mcp-link">Use with an assistant</a><a href="/notes/">Notes</a></div><details id="privacy"><summary>Your data</summary><p>Artist searches, selected Qloo IDs, and exclusions are sent through our server to Qloo. No account or listening history is needed. Your selections stay in this tab. Server responses may be privately cached for five minutes. Hosting and Qloo may retain operational logs under their policies. No analytics or advertising scripts are included.</p></details><details id="assistant"><summary>Connect an assistant</summary><p>Add this site’s <code id="mcp-url">/api/mcp</code> URL to an MCP client that supports Streamable HTTP. It provides <code>search_artists</code> and <code>build_music_crate</code>. Requests use the same real Qloo data as this page. No client-side API key is needed.</p></details>
+    <aside class="built-by" aria-labelledby="built-by-title">
+      <h2 id="built-by-title">Built by Suede AI in West Palm Beach, Florida</h2>
+      <p>Suede Crate is a demo from <a href="https://suedeai.ai/">Suede AI</a>, the agentic platform company founded by engineer <a href="https://suedeai.ai/founder">Jason Colapietro</a>. Suede AI also runs a <a href="https://suedeai.agency/">West Palm Beach SEO, GEO and web development practice</a> serving Jupiter and Palm Beach County, and helps publish <a href="https://jupitersocialfl.com/">Jupiter Social</a>. More about Jason at <a href="https://jasoncolapietro.com/">jasoncolapietro.com</a>.</p>
+      <p class="built-by-more"><span>More from Suede AI:</span> <a href="https://guitar.services/">Signal Chain guitar reference</a> <a href="https://guitarchords.info/">Free guitar chords and scales</a> <a href="https://signal.suedeai.ai/">Suede Signal</a> <a href="https://podcast.suedeai.ai/">Suede podcast</a> <a href="https://optimize.suedeai.ai/">Suede Scan AI readiness check</a></p>
+    </aside>
+  </footer>
 </body>
 </html>

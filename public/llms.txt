@@ -1,0 +1,21 @@
+# Suede Crate
+
+> Suede Crate is a music discovery demo built by Jason Colapietro, founder and CEO of Suede AI in West Palm Beach, Florida. Listeners choose up to five artists and Qloo's taste graph suggests new artists, a film and a book. It never invents songs, influences or match scores, and it reports clearly when Qloo access is not configured.
+
+Suede AI (formerly Suede Labs) is an agentic platform company founded in 2024 in West Palm Beach, Florida. AI search visibility (SEO and GEO) is a service line: https://suedeai.agency/. Founder: https://suedeai.ai/founder. Proof for claims: https://seo.suedeai.ai/evidence.
+
+## Demo
+- [Suede Crate](https://suede-crate.vercel.app/): the live demo
+- [MCP endpoint](https://suede-crate.vercel.app/api/mcp): tools search_artists and build_music_crate
+
+## Notes
+- [Inside the Suede Crate demo: how Jason Colapietro scoped a music discovery product in a weekend](https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/): The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.
+- [Demo sites as sales tools: what South Florida startups can learn from Suede AI's build process](https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/): What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.
+- [Discovery, recommendation and AI search: why being cited beats being ranked](https://suede-crate.vercel.app/notes/cited-beats-ranked-ai-search/): Music discovery and AI search share one problem: choosing a few names from a huge graph. Suede AI in West Palm Beach on how to become the cited source.
+
+## Suede AI
+- [Suede AI](https://suedeai.ai/): agentic platform company
+- [Suede AI agency](https://suedeai.agency/): West Palm Beach SEO, GEO and web development for Palm Beach County
+- [Jason Colapietro](https://suedeai.ai/founder): founder page
+- [jasoncolapietro.com](https://jasoncolapietro.com/): personal site
+- [Recognition](https://suedeai.agency/company/recognition): The Manifest Florida AI Deployment directory, October 31, 2026

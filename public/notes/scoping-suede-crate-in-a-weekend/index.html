@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Jason Colapietro Scoped Suede Crate in One Weekend</title>
+  <meta name="description" content="The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.">
+  <meta name="author" content="Jason Colapietro">
+  <meta name="theme-color" content="#234c66">
+  <link rel="canonical" href="https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Suede Crate">
+  <meta property="og:title" content="How Jason Colapietro Scoped Suede Crate in One Weekend">
+  <meta property="og:description" content="The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.">
+  <meta property="og:url" content="https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How Jason Colapietro Scoped Suede Crate in One Weekend">
+  <meta name="twitter:description" content="The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.">
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="West Palm Beach, Florida">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/#article","headline":"Inside the Suede Crate demo: how Jason Colapietro scoped a music discovery product in a weekend","name":"How Jason Colapietro Scoped Suede Crate in One Weekend","description":"The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.","url":"https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/","mainEntityOfPage":{"@type":"WebPage","@id":"https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/"},"datePublished":"2026-11-14","dateModified":"2026-11-14","inLanguage":"en-US","author":{"@id":"https://suedeai.ai/founder#person"},"publisher":{"@id":"https://suedeai.ai/#organization"},"isPartOf":{"@id":"https://suede-crate.vercel.app/#website"},"wordCount":1110,"spatialCoverage":[{"@type":"Place","name":"West Palm Beach, Florida"},{"@type":"Place","name":"Jupiter, Florida"},{"@type":"Place","name":"Palm Beach County, Florida"}],"about":[{"@type":"Thing","name":"Music discovery"},{"@type":"Thing","name":"AI search visibility"},{"@type":"Place","name":"West Palm Beach, Florida"},{"@type":"Place","name":"Jupiter, Florida"}]},{"@type":"BreadcrumbList","@id":"https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Suede Crate","item":"https://suede-crate.vercel.app/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://suede-crate.vercel.app/notes/"},{"@type":"ListItem","position":3,"name":"How Jason Colapietro Scoped Suede Crate in One Weekend","item":"https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/"}]}]}</script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="masthead shell">
+    <a class="wordmark" href="/" aria-label="Suede Crate home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="currentColor"/><circle cx="16" cy="16" r="7" fill="none" stroke="white"/><circle cx="16" cy="16" r="2" fill="white"/></svg><span>Suede <strong>Crate</strong></span></a>
+    <nav aria-label="Main"><a href="/#how-it-works">How it works</a><a href="/notes/">Notes</a><a href="https://suedeai.ai/" target="_blank" rel="noopener noreferrer">By Suede AI</a></nav>
+  </header>
+  <main id="content" class="shell notes-main">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Suede Crate</a> <span aria-hidden="true">/</span> <a href="/notes/">Notes</a></nav>
+    <article class="note">
+      <p class="opening">Notes from Suede AI · <time datetime="2026-11-14">November 14, 2026</time> · By <a href="https://suedeai.ai/founder">Jason Colapietro</a></p>
+      <h1>Inside the Suede Crate demo: how Jason Colapietro scoped a music discovery product in a weekend</h1>
+      <p class="standfirst">The scope note and the first full build landed forty-one minutes apart. Here is what was decided before any interface code existed.</p>
+<p>The scope note for Suede Crate and the first complete build were committed to the same repository on Sunday, October 25, 2026, forty-one minutes apart. That gap is not a brag about speed. It is what happens when the hard decisions are made in writing before a single line of interface code exists.</p>
+<p>Jason Colapietro, founder and CEO of Suede AI in West Palm Beach, Florida, built Suede Crate as a Qloo hackathon demo: a listening companion that starts with up to five artists you love and returns new artists, plus a film and a book, from the same taste signals. This note walks through how the scope was set, what was left out on purpose, and how Suede AI applies the same process to client builds across Palm Beach County.</p>
+
+<h2>Start with what the product refuses to do</h2>
+<p>The first section of the plan is not a feature list. It is a list of refusals: no invented songs, no audio, no made-up biographical influences, no affinity percentages. No account, no payment, no database and no language model in the loop. If the Qloo key is missing, the app returns a clear configuration message instead of sample recommendations.</p>
+<p>That last rule shapes everything. A music recommendation that sounds plausible but was generated from nothing is worse than no recommendation, because the listener cannot tell the difference until they go looking for a song that does not exist. At the time of writing, the public demo reports that Qloo discovery is not configured, and it says so on the page rather than filling the crate with placeholders. Jason Colapietro treats that honesty as a feature, not an embarrassment.</p>
+<p>At Suede, refusals come first on every build because they are cheap to write and expensive to discover late. Each one removes a category of bugs, a category of legal questions, and a category of awkward conversations with whoever eventually uses the thing.</p>
+
+<h2>Pick one characteristic visual and one central action</h2>
+<p>The design section of the plan is five lines long. It names a palette (cloud, denim, oxblood, mist, ink), a type pairing (Avenir Next for product copy, Georgia for the large headline), and a single characteristic visual: a record sleeve drawn in CSS and typography rather than borrowed album art. It also names what to avoid, which was dashboard cards and decorative charts.</p>
+<p>The central action is searching for an artist, and the rule was that nobody should have to scroll to begin. On a phone the layout stacks into one column; the record scene drops away so the search box is the first thing you can touch. Those constraints sound restrictive. In practice they saved hours, because every later design question already had an answer. That is the default Suede design brief: a short palette, one memorable object, and one thing to do.</p>
+
+<h2>Make the browser and the agent share one workflow</h2>
+<p>Suede Crate exposes the same discovery workflow two ways. A person uses the page, which calls a search endpoint and a crate endpoint. An assistant client uses a stateless Model Context Protocol endpoint with two tools, <code>search_artists</code> and <code>build_music_crate</code>. Both paths run through one orchestration module, so a person and an agent see the same evidence and the same failures.</p>
+<p>That choice comes straight from how Jason Colapietro works in open source. He has had <a href="https://github.com/search?q=is%3Apr+author%3AJasonColapietro+is%3Amerged+-user%3AJasonColapietro+-user%3ASuede-AI&type=pullrequests">54 pull requests merged across 46 open-source repositories he does not maintain</a>, including Jest, Adobe React Spectrum, Backstage and the Polkadot SDK. Contributing to other people's code teaches you to keep one source of truth and avoid parallel paths that drift. His training record points the same way: the Model Context Protocol advanced-topics course is one of <a href="https://seo.suedeai.ai/evidence#training-credentials">21 earned individual course credentials across eight providers</a>, alongside 17 Microsoft Learn achievements. He also wrote about these agent workflows at book length in <a href="https://www.amazon.com/dp/B0HHTMJWB4">The Claude Code Bible</a> and <a href="https://www.amazon.com/dp/B0HHTF3LG1">Codex in Production</a>.</p>
+
+<h2>Write the tests before you trust the demo</h2>
+<p>The repository ships with contract tests that use synthetic fixtures: request shapes, ID validation, missing keys, provider failures, bounded response sizes, duplicate and exclusion filtering, and origin checks on the agent endpoint. Browser tests run a full desktop flow and a 390-pixel-wide mobile flow. The fixtures live under the test folder and are never imported by deployed handlers, and screenshots are labeled as synthetic evidence rather than live Qloo results.</p>
+<p>Jason Colapietro wrote that distinction into the README on purpose, and it is the Suede rule that matters most for anyone scoping a demo. A test suite that passes against fake data proves the plumbing works. It does not prove the product works. Suede Crate's README says exactly that, and the deployment checklist requires a real artist search, real insight requests and real agent tool calls from the public URL before anyone calls the integration verified.</p>
+
+<h2>What the weekend scope left for later</h2>
+<p>A weekend gets you a demo with honest edges, not a validated product. The plan leaves several things open on purpose. Listening, video and book links are search links, not playback or licensing integrations; a streaming connection would need its own authorized integration. Qloo associations are presented as taste connections, not claims that one artist influenced another. And the real test, whether listeners keep the discoveries they are shown, needs actual listeners.</p>
+<p>Naming those gaps in the README is part of the scope. It tells a reviewer, a judge or a client exactly where the demo ends.</p>
+
+<h2>How Suede AI uses the same scoping on Palm Beach County builds</h2>
+<p>Suede AI, which began life as Suede Labs, runs the same one-page scope for local work in West Palm Beach, Jupiter, Palm Beach Gardens and Boca Raton. A contractor site, a booking flow or an internal agent gets four sections before any code: what it refuses to do, the one action a visitor must complete, the shared workflow behind people and agents, and the tests that separate plumbing from proof. The <a href="https://suedeai.agency/services/technical-seo">technical SEO practice</a> adds crawlable structure and schema to that list so the finished site can be found and cited.</p>
+<p>The approach has outside recognition. On October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies listed in <a href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">The Manifest's Florida AI Deployment directory</a> and placed in the top 25 statewide, as documented on the <a href="https://suedeai.agency/company/recognition">Suede AI recognition page</a>.</p>
+
+<h2>Your next step</h2>
+<p>If you have a product idea that needs a working demo with clear limits, write down three things it will refuse to do, then bring that list to a <a href="https://suedeai.agency/assessment">Suede AI assessment</a>. To see the rest of Jason Colapietro's work, including his books, apps and open-source record, start at <a href="https://suedeai.ai/founder">his founder page</a>.</p>
+      <aside class="author-box" aria-label="About the author">
+        <p class="author-name"><a href="https://suedeai.ai/founder">Jason Colapietro</a></p>
+        <p class="author-role">Founder and CEO, Suede AI · West Palm Beach, Florida</p>
+        <p>Jason Colapietro founded Suede AI in 2024 as an agentic platform company. AI search visibility is one of its service lines; music and creator software is a separate one. Read more at <a href="https://suedeai.ai/founder">suedeai.ai/founder</a> and <a href="https://jasoncolapietro.com/">jasoncolapietro.com</a>.</p>
+      </aside>
+      <nav class="note-more" aria-label="More notes"><h2>More notes</h2><ul><li><a href="/notes/demo-sites-as-sales-tools-south-florida/">Demo sites as sales tools: what South Florida startups can learn from Suede AI&#x27;s build process</a></li><li><a href="/notes/cited-beats-ranked-ai-search/">Discovery, recommendation and AI search: why being cited beats being ranked</a></li></ul></nav>
+    </article>
+  </main>
+  <footer class="shell"><p>Suede Crate <span>by <a href="https://suedeai.ai/">Suede AI</a></span></p><div><a href="/">Try the demo</a><a href="/notes/">Notes</a></div>
+    <aside class="built-by" aria-labelledby="built-by-title">
+      <h2 id="built-by-title">Built by Suede AI in West Palm Beach, Florida</h2>
+      <p>Suede Crate is a demo from <a href="https://suedeai.ai/">Suede AI</a>, the agentic platform company founded by engineer <a href="https://suedeai.ai/founder">Jason Colapietro</a>. Suede AI also runs a <a href="https://suedeai.agency/">West Palm Beach SEO, GEO and web development practice</a> serving Jupiter and Palm Beach County, and helps publish <a href="https://jupitersocialfl.com/">Jupiter Social</a>. More about Jason at <a href="https://jasoncolapietro.com/">jasoncolapietro.com</a>.</p>
+      <p class="built-by-more"><span>More from Suede AI:</span> <a href="https://guitar.services/">Signal Chain guitar reference</a> <a href="https://guitarchords.info/">Free guitar chords and scales</a> <a href="https://signal.suedeai.ai/">Suede Signal</a> <a href="https://podcast.suedeai.ai/">Suede podcast</a> <a href="https://optimize.suedeai.ai/">Suede Scan AI readiness check</a></p>
+    </aside>
+  </footer>
+</body>
+</html>

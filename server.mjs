@@ -7,7 +7,13 @@ import mcp from './api/mcp.js';
 import status from './api/status.js';
 import { send } from './lib/http.mjs';
 const routes = new Map([['/api/search', search], ['/api/crate', crate], ['/api/mcp', mcp], ['/api/status', status]]);
-const files = new Map([['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']], ['/style.css', ['style.css', 'text/css']], ['/favicon.svg', ['favicon.svg', 'image/svg+xml']]]);
+const files = new Map([['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']], ['/style.css', ['style.css', 'text/css']], ['/favicon.svg', ['favicon.svg', 'image/svg+xml']],
+  ['/sitemap.xml', ['sitemap.xml', 'application/xml']], ['/robots.txt', ['robots.txt', 'text/plain']], ['/llms.txt', ['llms.txt', 'text/plain']]]);
+export const notePages = ['', 'scoping-suede-crate-in-a-weekend', 'demo-sites-as-sales-tools-south-florida', 'cited-beats-ranked-ai-search'];
+for (const slug of notePages) {
+  const route = slug ? `/notes/${slug}` : '/notes';
+  files.set(route, [`${route.slice(1)}/index.html`, 'text/html']); files.set(`${route}/`, [`${route.slice(1)}/index.html`, 'text/html']);
+}
 export const securityHeaders = {
   'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
