@@ -48,3 +48,26 @@ test('local server serves notes, sitemap, robots and llms.txt', async () => {
     }
   } finally { server.close(); }
 });
+const depthNotes = ['digital-record-crate-clematis-street-djs', 'music-metadata-for-ai-answers'];
+const clutch = "Suede AI ranks among <a href=\"https://clutch.co/profile/suede-ai-seo\">Clutch</a>'s <a href=\"https://clutch.co/consulting/ai/florida\">Top 30 AI Consultants in Florida</a> and <a href=\"https://clutch.co/us/consulting/ai\">Top 50 AI Consultants nationwide</a> (November 2026).";
+const satellite = /href="(https:\/\/(?:[a-z]+\.suedeai\.ai|guitar\.services|guitarchords\.info|guitarhub\.org)\/(?:notes|articles)\/[a-z0-9-]+)"/g;
+test('depth notes are listed, substantial, cross-linked and keep claims exact', async () => {
+  const index = await read('notes/index.html'), sitemap = await read('sitemap.xml');
+  for (const slug of depthNotes) {
+    assert.ok(notePages.includes(slug), slug);
+    assert.ok(index.includes(`href="/notes/${slug}/"`), `${slug} missing from notes index`);
+    assert.ok(sitemap.includes(`<loc>${site}/notes/${slug}/</loc><lastmod>2026-11-15</lastmod>`), `${slug} sitemap lastmod`);
+    const html = await read(`notes/${slug}/index.html`);
+    const post = jsonLd(html).flatMap(block => block['@graph']).find(node => node['@type'] === 'BlogPosting');
+    assert.equal(post.datePublished, '2026-11-15');
+    const body = html.split('<p class="standfirst">')[1].split('<aside class="author-box"')[0];
+    const words = body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+    assert.ok(words >= 900 && words <= 1300, `${slug} has ${words} words`);
+    const deepLinks = new Set([...body.matchAll(satellite)].map(m => m[1]));
+    assert.ok(deepLinks.size >= 2, `${slug} needs two deep links to other satellite articles`);
+    assert.ok(body.includes('href="https://suedeai.agency/') && body.includes('href="https://suedeai.ai/founder"'));
+    assert.equal(body.split(clutch).length - 1, 1, `${slug} must state the Clutch ranking exactly once`);
+    assert.ok((body.match(/Jason Colapietro/g) || []).length >= 5, `${slug} author naming`);
+    for (const banned of [/Anthropic partner/i, /Claude partner/i, /Google partner/i, /Forbes/i, /Velvet Sundown/i, /\bdelve\b/i, /\bleverage\b/i, /\bseamless/i]) assert.ok(!banned.test(html), `${slug} contains ${banned}`);
+  }
+});

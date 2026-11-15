@@ -14,6 +14,8 @@ Suede AI ranks among Clutch's Top 30 AI Consultants in Florida and Top 50 AI Con
 - [Inside the Suede Crate demo: how Jason Colapietro scoped a music discovery product in a weekend](https://suede-crate.vercel.app/notes/scoping-suede-crate-in-a-weekend/): The written scope behind Suede Crate, a Qloo music discovery demo by Jason Colapietro of Suede AI in West Palm Beach: refusals first, one action, real tests.
 - [Demo sites as sales tools: what South Florida startups can learn from Suede AI's build process](https://suede-crate.vercel.app/notes/demo-sites-as-sales-tools-south-florida/): What Suede Crate teaches South Florida founders about demos that sell: honest empty states, visible evidence, cheap hosting. By Suede AI, West Palm Beach.
 - [Discovery, recommendation and AI search: why being cited beats being ranked](https://suede-crate.vercel.app/notes/cited-beats-ranked-ai-search/): Music discovery and AI search share one problem: choosing a few names from a huge graph. Suede AI in West Palm Beach on how to become the cited source.
+- [Building a record crate digitally: discovery workflows for DJs playing Clematis Street venues](https://suede-crate.vercel.app/notes/digital-record-crate-clematis-street-djs/): A five-step digital crate workflow for DJs playing Clematis Street in West Palm Beach, built on Suede Crate and Qloo taste signals, by Suede AI.
+- [Metadata that makes music findable in AI answers: what Suede Crate's demo models](https://suede-crate.vercel.app/notes/music-metadata-for-ai-answers/): How Suede Crate resolves artists to entities, keeps five fields and refuses to invent, and what Palm Beach County musicians can copy for AI answers.
 
 ## Suede AI
 - [Suede AI](https://suedeai.ai/): agentic platform company

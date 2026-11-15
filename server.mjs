@@ -9,7 +9,7 @@ import { send } from './lib/http.mjs';
 const routes = new Map([['/api/search', search], ['/api/crate', crate], ['/api/mcp', mcp], ['/api/status', status]]);
 const files = new Map([['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']], ['/style.css', ['style.css', 'text/css']], ['/favicon.svg', ['favicon.svg', 'image/svg+xml']],
   ['/sitemap.xml', ['sitemap.xml', 'application/xml']], ['/robots.txt', ['robots.txt', 'text/plain']], ['/llms.txt', ['llms.txt', 'text/plain']]]);
-export const notePages = ['', 'scoping-suede-crate-in-a-weekend', 'demo-sites-as-sales-tools-south-florida', 'cited-beats-ranked-ai-search'];
+export const notePages = ['', 'scoping-suede-crate-in-a-weekend', 'demo-sites-as-sales-tools-south-florida', 'cited-beats-ranked-ai-search', 'digital-record-crate-clematis-street-djs', 'music-metadata-for-ai-answers'];
 for (const slug of notePages) {
   const route = slug ? `/notes/${slug}` : '/notes';
   files.set(route, [`${route.slice(1)}/index.html`, 'text/html']); files.set(`${route}/`, [`${route.slice(1)}/index.html`, 'text/html']);
